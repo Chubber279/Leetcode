@@ -8,6 +8,16 @@ class TreeNode:
         self.right = right
 
 class Solution:
+    '''
+    Inorder Traversal - Left node, Root node, Right node
+
+    Recursive Solution:
+    Check if root node is not null
+    If there is left node, add to list
+    Add root node to list
+    If there is right node, add to list
+    return list
+    '''
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         output = []
         if root:
@@ -15,6 +25,21 @@ class Solution:
             output.append(root.val)
             output.extend(self.inorderTraversal(root.right))
         return output
+    
+    '''
+    Iterative Soltion
+
+    Initialize stack and output list
+    Create a pointer to traverse the tree
+    While both the pointer is not null and stack is not empty
+        Check if pointer is not null:
+            Add the node to the stack
+            point pointer to left node
+        If pointer is null:
+            Pop from the stack then point the pointer to that node
+            Add the value of the node to the output list
+            point pointer to the right node
+    '''
     
     def inorderTraversalIterative(self, root: Optional[TreeNode]) -> List[int]:
         stack = []
@@ -30,6 +55,3 @@ class Solution:
                 current_node = current_node.right
         return output
 
-solution = Solution()
-answer = solution.inorderTraversal(root = [1,null,2,3])
-print(answer)
