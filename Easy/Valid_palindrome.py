@@ -10,7 +10,6 @@ class Solution:
             elif not s[end].isalnum():
                 end -= 1
             elif s[start] != s[end]:
-                print(s[start], s[end])
                 return False
             else:
                 start += 1
