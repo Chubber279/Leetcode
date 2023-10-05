@@ -6,11 +6,7 @@ class Solution:
         left = 0
         right = 0
         profit = 0
-        if len(prices) == 1:
-            return 0
-        minPrice = 99999999999999
-        minPriceIndex = 0
-        for index, price in enumerate(prices):
+        for _ in prices:
             if prices[right] < prices[left]:
                 left = right
             if (prices[right] - prices[left]) > profit:
