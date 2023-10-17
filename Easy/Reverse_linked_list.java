@@ -1,5 +1,3 @@
-import java.io.*;
-import java.lang.*;
 import java.util.*;
 
 public class Reverse_linked_list {
