@@ -1,22 +1,15 @@
 public class Move_zeroes {
     public static void moveZeroes(int[] nums) {
-        int zeroIndex = -1;
-        boolean isZero = false;
+        int snowball = 0;
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == 0 && isZero == false) {
-                zeroIndex = i;
-                isZero = true;
-            }
-            if (nums[i] != 0 && isZero == true) {
-                nums[zeroIndex] = nums[i];
+            if (nums[i] == 0) {
+                snowball++;
+            } else if (snowball > 0) {
+                nums[i - snowball] = nums[i];
                 nums[i] = 0;
-                zeroIndex++;
+
             }
         }
     }
 
-    public static void main(String[] args) {
-        int[] nums = { 0, 1, 0, 3, 12 };
-        moveZeroes(nums);
-    }
 }
